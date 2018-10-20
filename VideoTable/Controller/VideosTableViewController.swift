@@ -48,4 +48,27 @@ class VideosTableViewController : UITableViewController {
         })
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        // animation 1
+//        let rotationAnimation = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
+//        cell.layer.transform = rotationAnimation
+//        cell.alpha = 0.3
+//
+//        UIView.animate(withDuration: 0.7) {
+//            cell.layer.transform = CATransform3DIdentity
+//            cell.alpha = 1
+//        }
+        
+        let rotationAnimation = CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
+        cell.layer.transform = rotationAnimation
+        cell.alpha = 0
+        
+        UIView.animate(withDuration: 0.75) {
+            cell.alpha = 1
+            cell.layer.transform = CATransform3DIdentity
+        }
+        
+    }
+    
 }
